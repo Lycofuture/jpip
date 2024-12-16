@@ -31,10 +31,14 @@ jobs:
       - name: Merge TXT files
         run: cat extracted/*.txt > merged_ips.txt
 
+      - name: Install Dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y curl jq
+    
       # Step 5: Filter JP IPs
       - name: Filter JP IPs
         run: |
-          apt install curl jq -y
           while read -r ip; do
             geo=$(curl -s "https://api.ip.sb/geoip/$ip" | jq -r '.country_code' || echo "ERROR")
             if [ "$geo" == "JP" ]; then

@@ -35,7 +35,7 @@ jobs:
       - name: Filter JP IPs
         run: |
           while read -r ip; do
-            geo=$(curl -s "https://ipapi.co/$ip/country" || echo "ERROR")
+            geo=$(curl -s "https://api.ip.sb/geoip/$ip" | jq -r '.country_code' || echo "ERROR")
             if [ "$geo" == "JP" ]; then
               echo "$ip" >> jp_ips.txt
               echo "$ip - $geo"
@@ -44,7 +44,7 @@ jobs:
             else
               echo "$ip - $geo"
             fi
-            sleep 1  # 延迟等待 1 秒
+            sleep 1
           done < merged_ips.txt
 
       # Step 6: Check connectivity for JP IPs

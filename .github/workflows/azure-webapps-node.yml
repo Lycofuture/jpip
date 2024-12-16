@@ -34,6 +34,7 @@ jobs:
       # Step 5: Filter JP IPs
       - name: Filter JP IPs
         run: |
+          apt install curl jq -y
           while read -r ip; do
             geo=$(curl -s "https://api.ip.sb/geoip/$ip" | jq -r '.country_code' || echo "ERROR")
             if [ "$geo" == "JP" ]; then

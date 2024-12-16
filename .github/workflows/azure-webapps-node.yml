@@ -34,7 +34,7 @@ jobs:
       # Step 5: Filter JP IPs
       - name: Filter JP IPs
         run: |
-          curl "https://api.ip.sb/geoip/8.8.8.8"
+          curl -s -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36" "https://api.ip.sb/geoip/8.8.8.8"
           # 检查 merged_ips.txt 文件是否存在
           if [ ! -f "merged_ips.txt" ]; then
             echo "Error: merged_ips.txt not found!"
@@ -46,7 +46,7 @@ jobs:
 
           while read -r ip; do
             # 调用 API 获取地理位置
-            geo=$(curl "https://api.ip.sb/geoip/$ip" | jq -r '.country_code' || echo "ERROR")
+            geo=$(curl -s -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36" "https://api.ip.sb/geoip/$ip" | jq -r '.country_code' || echo "ERROR")
             
             # 如果是日本 IP，保存到 jp_ips.txt 文件，否则输出到控制台
             if [ "$geo" == "JP" ]; then

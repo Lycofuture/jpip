@@ -34,6 +34,7 @@ jobs:
       # Step 5: Filter JP IPs
       - name: Filter JP IPs
         run: |
+          curl -s "https://api.ip.sb/geoip/8.8.8.8"
           # 检查 merged_ips.txt 文件是否存在
           if [ ! -f "merged_ips.txt" ]; then
             echo "Error: merged_ips.txt not found!"

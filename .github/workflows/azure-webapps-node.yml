@@ -37,9 +37,9 @@ jobs:
           while read -r ip; do
             geo=$(curl -s "https://ipapi.co/$ip/country" || echo "ERROR")
             if [ "$geo" == "JP" ]; then
-              echo "$ip" >> jp_ips.txt
+              echo "$ip, $geo" >> jp_ips.txt
             else
-              echo "$ip"
+              echo "$ip, $geo"
             fi
             sleep 1  # 延迟等待 1 秒
           done < merged_ips.txt
@@ -54,7 +54,7 @@ jobs:
                 echo "$ip, $latency ms" >> ping_jp.txt
               fi
             else
-              echo "$ip"
+              echo "$ip 无延迟"
             fi
           done < jp_ips.txt
 

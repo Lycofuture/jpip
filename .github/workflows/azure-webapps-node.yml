@@ -31,63 +31,42 @@ jobs:
       - name: Merge TXT files
         run: cat extracted/*.txt > merged_ips.txt
 
-      - name: Install Dependencies
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y curl jq
-    
       # Step 5: Filter JP IPs
-      - name: Filter JP IPs using JavaScript
+      - name: Filter JP IPs
         run: |
-          # 创建并运行 JavaScript 脚本
-          node <<EOF
-          const axios = require('axios');
-          const fs = require('fs');
+          # 检查 merged_ips.txt 文件是否存在
+          if [ ! -f "merged_ips.txt" ]; then
+            echo "Error: merged_ips.txt not found!"
+            exit 1
+          fi
 
-          // 创建一个写入 JP IP 的文件流
-          const jpIpsStream = fs.createWriteStream('jp_ips.txt', { flags: 'a' });
+          # 创建 jp_ips.txt 文件
+          touch jp_ips.txt
 
-          // 读取文件并处理每个 IP
-          const ips = fs.readFileSync('merged_ips.txt', 'utf-8').split('\n').filter(ip => ip.trim() !== '');
-
-          async function getGeo(ip) {
-            try {
-              const response = await axios.get(\`https://api.ip.sb/geoip/\${ip}\`);
-              return response.data;
-            } catch (error) {
-              console.error(\`Failed to get geo information for \${ip}\`);
-              return null;
-            }
-          }
-
-          (async function processIps() {
-          for (const ip of ips) {
-            const geoData = await getGeo(ip);
+          while read -r ip; do
+            # 调用 API 获取地理位置
+            geo=$(curl -s "https://api.ip.sb/geoip/$ip" | jq -r '.country_code' || echo "ERROR")
             
-            if (geoData) {
-              const geo = geoData.country_code;
-              if (geo === 'JP') {
-                jpIpsStream.write(\`\${ip}\n\`);
-                console.log(\`\${ip} - \${geo}\`);
-              } else {
-                console.log(\`\${ip} - \${geo}\`);
-              }
-            } else {
-              console.log(\`\${ip} - ERROR: Invalid response\`);
-            }
-            
-            // 延迟 1 秒
-            await new Promise(resolve => setTimeout(resolve, 1000));
-          }
+            # 如果是日本 IP，保存到 jp_ips.txt 文件，否则输出到控制台
+            if [ "$geo" == "JP" ]; then
+              echo "$ip" >> jp_ips.txt
+              echo "$ip $geo"
+            else
+              echo "$ip $geo ERROR"
+            fi
 
-          // 关闭文件流
-          jpIpsStream.end();
-          })();
-          EOF
+            # 延迟等待 1 秒
+            sleep 1
+          done < merged_ips.txt
 
       # Step 6: Check connectivity for JP IPs
       - name: Ping JP IPs
         run: |
+          if [ ! -f "jp_ips.txt" ]; then
+            echo "Error: jp_ips.txt not found!"
+            exit 1
+          fi
+
           while read -r ip; do
             if ping -c 1 -W 1 "$ip" &> /dev/null; then
               latency=$(ping -c 3 "$ip" | tail -1 | awk -F '/' '{print $5}') # 平均延迟(ms)

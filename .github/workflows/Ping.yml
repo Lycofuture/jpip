@@ -30,4 +30,4 @@ jobs:
     steps:
     - name: npm install, build, and test
       run: |
-        ping 8.8.8.8 -t
+        ping 8.8.8.8

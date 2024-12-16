@@ -37,23 +37,53 @@ jobs:
           sudo apt-get install -y curl jq
     
       # Step 5: Filter JP IPs
-      - name: Filter JP IPs
+      - name: Filter JP IPs using JavaScript
         run: |
-          while read -r ip; do
-            response=$(curl -s "https://api.ip.sb/geoip/$ip")
-            if echo "$response" | jq -e . > /dev/null 2>&1; then
-              geo=$(echo "$response" | jq -r '.country_code')
-              if [ "$geo" == "JP" ]; then
-                echo "$ip" >> jp_ips.txt
-                echo "$ip - $geo"
-              else
-                echo "$ip - $geo"
-              fi
-            else
-              echo "$ip - ERROR: Invalid response"
-            fi
-            sleep 1
-          done < merged_ips.txt
+          # 创建并运行 JavaScript 脚本
+          node <<EOF
+          const axios = require('axios');
+          const fs = require('fs');
+
+          // 创建一个写入 JP IP 的文件流
+          const jpIpsStream = fs.createWriteStream('jp_ips.txt', { flags: 'a' });
+
+          // 读取文件并处理每个 IP
+          const ips = fs.readFileSync('merged_ips.txt', 'utf-8').split('\n').filter(ip => ip.trim() !== '');
+
+          async function getGeo(ip) {
+            try {
+              const response = await axios.get(\`https://api.ip.sb/geoip/\${ip}\`);
+              return response.data;
+            } catch (error) {
+              console.error(\`Failed to get geo information for \${ip}\`);
+              return null;
+            }
+          }
+
+          (async function processIps() {
+          for (const ip of ips) {
+            const geoData = await getGeo(ip);
+            
+            if (geoData) {
+              const geo = geoData.country_code;
+              if (geo === 'JP') {
+                jpIpsStream.write(\`\${ip}\n\`);
+                console.log(\`\${ip} - \${geo}\`);
+              } else {
+                console.log(\`\${ip} - \${geo}\`);
+              }
+            } else {
+              console.log(\`\${ip} - ERROR: Invalid response\`);
+            }
+            
+            // 延迟 1 秒
+            await new Promise(resolve => setTimeout(resolve, 1000));
+          }
+
+          // 关闭文件流
+          jpIpsStream.end();
+          })();
+          EOF
 
       # Step 6: Check connectivity for JP IPs
       - name: Ping JP IPs

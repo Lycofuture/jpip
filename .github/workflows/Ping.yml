@@ -28,6 +28,14 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: npm install, build, and test
+    - name: Ping Target
       run: |
-        ping 8.8.8.8
+        TARGET="google.com" # 替换为你的目标
+        echo "Pinging $TARGET..."
+        ping -c 4 $TARGET
+
+    - name: Extract Ping Latency
+      run: |
+        TARGET="google.com"
+        RESULT=$(ping -c 4 $TARGET | tail -1 | awk -F '/' '{print $5}')
+        echo "Average latency to $TARGET: ${RESULT} ms"

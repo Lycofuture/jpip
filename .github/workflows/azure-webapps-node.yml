@@ -38,8 +38,11 @@ jobs:
             geo=$(curl -s "https://ipapi.co/$ip/country" || echo "ERROR")
             if [ "$geo" == "JP" ]; then
               echo "$ip" >> jp_ips.txt
+              echo "$ip - $geo"
+            elif [ "$geo" == "ERROR" ]; then
+              echo "$ip - ERROR"
             else
-              echo "$ip, ERROR"
+              echo "$ip - $geo"
             fi
             sleep 1  # 延迟等待 1 秒
           done < merged_ips.txt

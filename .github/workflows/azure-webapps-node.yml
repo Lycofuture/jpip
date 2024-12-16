@@ -39,7 +39,7 @@ jobs:
             if [ "$geo" == "JP" ]; then
               echo "$ip" >> jp_ips.txt
             else
-              echo "$ip, $geo"
+              echo "$ip, ERROR"
             fi
             sleep 1  # 延迟等待 1 秒
           done < merged_ips.txt

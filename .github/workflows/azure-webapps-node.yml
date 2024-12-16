@@ -37,7 +37,7 @@ jobs:
           while read -r ip; do
             geo=$(curl -s "https://ipapi.co/$ip/country" || echo "ERROR")
             if [ "$geo" == "JP" ]; then
-              echo "$ip, $geo" >> jp_ips.txt
+              echo "$ip" >> jp_ips.txt
             else
               echo "$ip, $geo"
             fi

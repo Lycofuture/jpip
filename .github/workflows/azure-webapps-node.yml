@@ -40,14 +40,17 @@ jobs:
       - name: Filter JP IPs
         run: |
           while read -r ip; do
-            geo=$(curl -s "https://api.ip.sb/geoip/$ip" | jq -r '.country_code' || echo "ERROR")
-            if [ "$geo" == "JP" ]; then
-              echo "$ip" >> jp_ips.txt
-              echo "$ip - $geo"
-            elif [ "$geo" == "ERROR" ]; then
-              echo "$ip - ERROR"
+            response=$(curl -s "https://api.ip.sb/geoip/$ip")
+            if echo "$response" | jq -e . > /dev/null 2>&1; then
+              geo=$(echo "$response" | jq -r '.country_code')
+              if [ "$geo" == "JP" ]; then
+                echo "$ip" >> jp_ips.txt
+                echo "$ip - $geo"
+              else
+                echo "$ip - $geo"
+              fi
             else
-              echo "$ip - $geo"
+              echo "$ip - ERROR: Invalid response"
             fi
             sleep 1
           done < merged_ips.txt

@@ -34,7 +34,6 @@ jobs:
       # Step 5: Filter JP IPs
       - name: Filter JP IPs
         run: |
-          curl -s -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36" "https://api.ip.sb/geoip/8.8.8.8"
           # 检查 merged_ips.txt 文件是否存在
           if [ ! -f "merged_ips.txt" ]; then
             echo "Error: merged_ips.txt not found!"
@@ -52,33 +51,15 @@ jobs:
             if [ "$geo" == "JP" ]; then
               echo "$ip" >> jp_ips.txt
               echo "$ip $geo"
+            elif [ "$geo" == "ERROR" ]; then
+              echo "$ip API Error"
             else
-              echo "$ip $geo ERROR"
+              echo "$ip $geo"
             fi
 
             # 延迟等待 1 秒
             sleep 1
           done < merged_ips.txt
-
-      # Step 6: Check connectivity for JP IPs
-      - name: Ping JP IPs
-        run: |
-          if [ ! -f "jp_ips.txt" ]; then
-            echo "Error: jp_ips.txt not found!"
-            exit 1
-          fi
-
-          while read -r ip; do
-            if ping -c 1 -W 1 "$ip" &> /dev/null; then
-              latency=$(ping -c 3 "$ip" | tail -1 | awk -F '/' '{print $5}') # 平均延迟(ms)
-              if [ -n "$latency" ]; then
-                echo "$ip, $latency ms" >> ping_jp.txt
-              fi
-            else
-              echo "$ip 无延迟"
-            fi
-          done < jp_ips.txt
-
       # Step 7: Commit and push results
       - name: Commit and push results
         env:
@@ -86,6 +67,6 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add ping_jp.txt
+          git add jp_ips.txt
           git commit -m "Add valid JP IPs with latency results"
           git push

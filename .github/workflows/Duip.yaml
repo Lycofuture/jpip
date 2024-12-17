@@ -30,13 +30,6 @@ jobs:
 
           # 遍历 IP 文件
           while read -r ip; do
-            # 获取地理位置数据 (country 和 country_code)
-            geo=$(curl -s -H "User-Agent: Mozilla/5.0" "https://api.ip.sb/geoip/$ip")
-            country=$(echo "$geo" | jq -r '.country // "Unknown"')
-            country_code=$(echo "$geo" | jq -r '.country_code // "Unknown"')
-
-            # 检查是否是日本的 IP
-            if [[ "$country_code" == "JP" ]]; then
               # 仅提取 IP 地址
               clean_ip=$(echo "$ip" | awk -F'#' '{print $1}')
 
@@ -44,11 +37,11 @@ jobs:
               for port in "${ports[@]}"; do
                 if nc -z -w2 "$clean_ip" "$port"; then
                   # 如果端口通，写入文件
-                  echo "$ip:$port#$country" | tee -a open_ips.txt
+                  echo "$clean_ip:$port#Japan" >> open_ips.txt
+                else
+                  echo "$ip:$port#Japan"
                 fi
               done
-            fi
-            sleep 1  # 避免 API 请求过快
           done < jp_ips.txt
 
       - name: Commit and Push Results

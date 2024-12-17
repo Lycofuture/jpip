@@ -44,17 +44,16 @@ jobs:
             country=$(echo "$response" | jq -r '.country' || echo "Unknown")
             if [ "$geo" != "ERROR" ] && [ -n "$geo" ]; then
               if nc -z -w2 "$ip" "443"; then
-                for port in "${ports[@]}"; do
-                  if nc -z -w2 "$ip" "$port"; then
+                # for port in "${ports[@]}"; do
+                #  if nc -z -w2 "$ip" "$port"; then
                     # 如果端口通，写入文件
-                    echo "$ip:$port#$country" >> open_ips.txt
-                    echo "$ip:$port ✅"
-                  else
-                    echo "$ip:$port ❌"
-                  fi
-                done
+                    echo "$ip:443#$country" >> open_ips.txt
+                #  else
+                #    echo "$ip:$port ❌"
+                #  fi
+                # done
               else
-                echo "$ip 端口被关闭"
+                echo "$ip:443 ❌"
               fi
               echo "$ip#$country" >> jp_ips.txt
             elif [ "$geo" == "ERROR" ]; then

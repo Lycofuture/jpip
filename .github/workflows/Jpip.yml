@@ -35,12 +35,27 @@ jobs:
       - name: Filter JP IPs
         run: |
           > jp_ips.txt
+          > open_ips.txt
+          ports=("443" "2053" "2083" "2087" "2096" "8443")
           while read -r ip; do
             # 调用 API 获取地理位置
             response=$(curl -s -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36" "https://api.ip.sb/geoip/$ip")
             geo=$(echo "$response" | jq -r '.country_code' || echo "ERROR")
             country=$(echo "$response" | jq -r '.country' || echo "Unknown")
             if [ "$geo" == "JP" ]; then
+              if nc -z -w2 "$clean_ip" "443"; then
+                for port in "${ports[@]}"; do
+                  if nc -z -w2 "$ip" "$port"; then
+                    # 如果端口通，写入文件
+                    echo "$ip:$port#Japan" >> open_ips.txt
+                    echo "$ip:$port ✅"
+                  else
+                    echo "$ip ❌"
+                  fi
+                done
+              else
+                echo "$ip 端口被关闭"
+              fi
               echo "$ip#$country" >> jp_ips.txt
               echo "$ip#$geo"
             elif [ "$geo" == "ERROR" ]; then
@@ -52,8 +67,6 @@ jobs:
           done < merged_ips.txt
       # Step 7: Commit and push results
       - name: Commit and push results
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"

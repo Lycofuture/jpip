@@ -47,7 +47,8 @@ jobs:
                 # for port in "${ports[@]}"; do
                 #  if nc -z -w2 "$ip" "$port"; then
                     # 如果端口通，写入文件
-                    echo "$ip:443#$country" >> open_ips.txt
+                    echo "$ip:443#$country" >> ${country}_ips.txt
+                    echo "$ip:443#$country" >> all_ips.txt
                 #  else
                 #    echo "$ip:$port ❌"
                 #  fi
@@ -66,9 +67,9 @@ jobs:
       # Step 7: Commit and push results
       - name: Commit and push results
         run: |
+          rm -rf merged_ips.txt
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add jp_ips.txt
-          git add open_ips.txt
+          git add *_ips.txt
           git commit -m "Add valid JP IPs with latency results"
           git push

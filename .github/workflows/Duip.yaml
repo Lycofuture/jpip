@@ -31,7 +31,8 @@ jobs:
 
             # 检查 443 端口是否开放
             if [[ "$country_code" == "JP" ]]; then
-              if nc -z -w2 "$ip" 443; then
+              clean_ip=$(echo "$ip" | awk -F'#' '{print $1}')
+              if nc -z -w2 "$clean_ip" 443; then
                 echo "$ip#$country#$country_code#Port443_Open" | tee -a open_ips.txt
               else
                 echo "$ip#$country#$country_code#Port443_Closed"
@@ -44,10 +45,10 @@ jobs:
 
       - name: Commit and Push Results
         run: |
-          # 设置 Git 用户信息
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
+          date > generated.txt
+          # Note: the following account information will not work on GHES
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           # 添加和提交更改
           git add open_ips.txt
           git commit -m "Add filtered JP IPs with open"

@@ -50,7 +50,7 @@ jobs:
                     echo "$ip:$port#Japan" >> open_ips.txt
                     echo "$ip:$port ✅"
                   else
-                    echo "$ip ❌"
+                    echo "$ip:$port ❌"
                   fi
                 done
               else
@@ -61,7 +61,7 @@ jobs:
             elif [ "$geo" == "ERROR" ]; then
               echo "$ip API Error"
             else
-              echo "$ip $geo"
+              echo "$ip $geo 无地理位置"
             fi
             sleep 1
           done < merged_ips.txt

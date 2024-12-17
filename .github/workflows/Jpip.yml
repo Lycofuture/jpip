@@ -29,7 +29,7 @@ jobs:
 
       # Step 4: Merge all TXT files into one
       - name: Merge TXT files
-        run: cat extracted/*.txt > merged_ips.txt
+        run: cat extracted/*.txt | sort -u > merged_ips.txt
 
       # Step 5: Filter JP IPs
       - name: Filter JP IPs

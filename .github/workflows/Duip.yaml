@@ -1,0 +1,56 @@
+name: Filter JP IPs with Open 443 Port
+
+on:
+  workflow_dispatch:  # 手动触发工作流
+
+jobs:
+  filter-jp-ips:
+    name: Filter and Check IPs
+    runs-on: ubuntu-latest  # 使用 GitHub 提供的 Ubuntu 环境
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4  # 拉取代码仓库
+
+      - name: Install Dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y curl jq netcat
+
+      - name: Filter JP IPs and Check Port 443
+        run: |
+          # 清空输出文件
+          > open_ips.txt
+
+          # 遍历 IP 文件
+          while read -r ip; do
+            # 获取地理位置数据 (country 和 country_code)
+            geo=$(curl -s -H "User-Agent: Mozilla/5.0" "https://api.ip.sb/geoip/$ip")
+            country=$(echo "$geo" | jq -r '.country // "Unknown"')
+            country_code=$(echo "$geo" | jq -r '.country_code // "Unknown"')
+
+            # 检查 443 端口是否开放
+            if [[ "$country_code" == "JP" ]]; then
+              if nc -z -w2 "$ip" 443; then
+                echo "$ip#$country#$country_code#Port443_Open" | tee -a open_ips.txt
+              else
+                echo "$ip#$country#$country_code#Port443_Closed"
+              fi
+            else
+              echo "$ip#$country#$country_code#Not_JP"
+            fi
+            sleep 1  # 避免 API 请求过快
+          done < jp_ips.txt
+
+      - name: Commit and Push Results
+        run: |
+          # 设置 Git 用户信息
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          # 添加和提交更改
+          git add open_ips.txt
+          git commit -m "Add filtered JP IPs with open"
+
+          # 推送到仓库
+          git push

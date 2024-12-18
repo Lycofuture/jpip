@@ -15,55 +15,10 @@ jobs:
       id-token: write
 
     steps:
-      # Step 1: Checkout the repository
       - name: Checkout repository
         uses: actions/checkout@v4
-
-      # Step 2: Download the ZIP file
-      - name: Download ZIP file
-        run: wget -O ips.zip https://zip.baipiao.eu.org
-
-      # Step 3: Unzip the file
-      - name: Unzip the downloaded file
-        run: unzip ips.zip -d extracted
-
-      # Step 4: Merge all TXT files into one
-      - name: Merge TXT files
-        run: cat extracted/*.txt | sort -u > list.txt
-
-      # Step 5: Filter JP IPs
-      - name: Filter JP IPs
-        run: |
-          > *_ips.txt
-          while read -r ip; do
-            # 调用 API 获取地理位置
-            response=$(curl -s -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36" "https://api.ip.sb/geoip/$ip")
-            geo=$(echo "$response" | jq -r '.country_code' || echo "ERROR")
-            country=$(echo "$response" | jq -r '.country' || echo "Unknown")
-            if [ "$geo" != "ERROR" ] && [ -n "$geo" ]; then
-              if nc -z -w2 "$ip" "443"; then
-                # for port in "${ports[@]}"; do
-                #  if nc -z -w2 "$ip" "$port"; then
-                    # 如果端口通，写入文件
-                    echo "$ip:443#$country" >> "$country"_ips.txt
-                    echo "$ip:443#$country" >> all_ips.txt
-                #  else
-                #    echo "$ip:$port ❌"
-                #  fi
-                # done
-              else
-                echo "$ip:443 ❌"
-              fi
-            elif [ "$geo" == "ERROR" ]; then
-              echo "$ip API Error"
-            else
-              echo "$ip $geo 无地理位置"
-            fi
-            sleep 1
-          done < list.txt
-      # Step 7: Commit and push results
-      - name: Commit and push results
-        run: |
+      - run: |
+          bash api.sh
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add *_ips.txt

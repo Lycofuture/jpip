@@ -16,6 +16,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+      - name: 初始化
+        run: bash d.sh
       - run: |
           bash api.sh
           git config --global user.name "github-actions[bot]"

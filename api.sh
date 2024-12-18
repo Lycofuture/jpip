@@ -1,4 +1,4 @@
->#!/bin/bash
+#!/bin/bash
 
 # 必要环境变量
 CLOUDFLARE_EMAIL="d342jxc@gmail.com"

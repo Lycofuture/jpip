@@ -1,7 +1,3 @@
-# Cloudflare API 信息
-CLOUDFLARE_EMAIL="d342jxc@gmail.com"
-CLOUDFLARE_API_KEY="6dc09676275e94479ec8bab58d508804e083c"
-DOMAIN_NAME="misakanetwork.us.kg"
 # 查询 Zones 列表
 echo "正在查询 Zone ID..."
 ZONE_ID=$(curl -s -X GET "https://api.cloudflare.com/client/v4/zones?name=$DOMAIN_NAME" \

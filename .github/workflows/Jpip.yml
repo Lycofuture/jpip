@@ -1,27 +1,30 @@
 name: jpip
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '00 00 * * *'
-
+permissions:
+  contents: write
+  discussions: write
 jobs:
   process-ips:
     runs-on: ubuntu-latest
-
-    permissions:
-      contents: write  # 提交权限
-      actions: read
-      id-token: write
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-      
       - run: |
-          chmod +x api.sh
-          ./api.sh
+          bash d.sh
+          bash api.sh
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add .
+          git add *_ips.txt
           git commit -m "Add valid JP IPs with latency results"
           git push
+      - name: Release
+        uses: softprops/action-gh-release@v2
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          body_path: ${{ github.workspace }}-CHANGELOG.txt
+          repository: my_gh_org/my_gh_repo
+          # note you'll typically need to create a personal access token
+          # with permissions to create releases in the other repo
+          token: ${{ secrets.CUSTOM_GITHUB_TOKEN }}
+          files: "*_ips.txt"

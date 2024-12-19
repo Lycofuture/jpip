@@ -13,8 +13,8 @@ jobs:
       - name: bulid
         run: |
           export CLOUDFLARE_API_KEY="${{ secrets.CLOUDFLARE_API_KEY }}"
-          export CLOUDFLARE_EMAIL="${{ secrets.CLOUDFLARE_EMAIL }}"
-          export DOMAIN_NAME="${{ secrets.DOMAIN_NAME }}"
+          export CLOUDFLARE_EMAIL="${{ variables.CLOUDFLARE_EMAIL }}"
+          export DOMAIN_NAME="${{ variables.DOMAIN_NAME }}"
           bash d.sh
           bash api.sh
           git config --global user.name "github-actions[bot]"

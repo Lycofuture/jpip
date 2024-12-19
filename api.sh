@@ -1,10 +1,4 @@
 #!/bin/bash
-
-# 必要环境变量
-CLOUDFLARE_EMAIL="d342jxc@gmail.com"
-CLOUDFLARE_API_KEY="6dc09676275e94479ec8bab58d508804e083c"
-DOMAIN_NAME="misakanetwork.us.kg"
-
 # 下载并解压 IP 文件
 wget -q -O ips.zip https://zip.baipiao.eu.org
 unzip -o ips.zip -d extracted

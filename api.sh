@@ -46,18 +46,24 @@ while read -r ip; do
             echo "$record" >> all_ips.txt
 
             # 添加 DNS 记录到 Cloudflare
-            dns_response=$(curl -s -X POST "https://api.cloudflare.com/client/v4/zones/$ZONE_ID/dns_records" \
-                -H "X-Auth-Email: $CLOUDFLARE_EMAIL" \
-                -H "X-Auth-Key: $CLOUDFLARE_API_KEY" \
-                -H "Content-Type: application/json" \
-                --data "{\"type\":\"A\",\"name\":\"$geo.$DOMAIN_NAME\",\"content\":\"$result\",\"ttl\":1,\"proxied\":false}")
+            if [[ "$geo" == "hk" || "$geo" == "jp" || "$geo" == "us" ]]; then
+                # 添加 DNS 记录到 Cloudflare
+                dns_response=$(curl -s -X POST "https://api.cloudflare.com/client/v4/zones/$ZONE_ID/dns_records" \
+                    -H "X-Auth-Email: $CLOUDFLARE_EMAIL" \
+                    -H "X-Auth-Key: $CLOUDFLARE_API_KEY" \
+                    -H "Content-Type: application/json" \
+                    --data "{\"type\":\"A\",\"name\":\"$geo.$DOMAIN_NAME\",\"content\":\"$ip\",\"ttl\":1,\"proxied\":false}")
 
-            # 检查 API 响应
-            success=$(echo "$dns_response" | jq -r '.success' 2>/dev/null)
-            if [ "$success" == "true" ]; then
-                echo "✅ 成功添加 $geo.$DOMAIN_NAME -> $result" | tee -a cloudflare_log.txt
+                # 检查 API 响应
+                success=$(echo "$dns_response" | jq -r '.success' 2>/dev/null)
+                if [ "$success" == "true" ]; then
+                    echo "✅ 成功添加 $geo.$DOMAIN_NAME -> $ip" | tee -a cloudflare_log.txt
+                else
+                    error_message=$(echo "$dns_response" | jq -r '.errors[0].message' 2>/dev/null || echo "Unknown error")
+                    echo "❌ 失败添加 $geo.$DOMAIN_NAME -> $ip: $error_message" | tee -a cloudflare_log.txt
+                fi
             else
-                echo "❌ 失败添加 $geo.$DOMAIN_NAME -> $result: $(echo "$dns_response" | jq -r '.errors[0].message' 2>/dev/null)" | tee -a cloudflare_log.txt
+                echo "✋ 只为 HK、JP、US 添加 DNS 记录，跳过 $geo.$DOMAIN_NAME"
             fi
         else
             echo "$ip:443 ❌ 端口关闭"

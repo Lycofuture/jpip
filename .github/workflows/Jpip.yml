@@ -16,12 +16,11 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-      - name: 初始化
-        run: bash d.sh
+      
       - run: |
-          bash api.sh
+          rm -rf *.txt
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add *_ips.txt
+          git add *
           git commit -m "Add valid JP IPs with latency results"
           git push

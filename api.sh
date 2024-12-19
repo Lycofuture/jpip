@@ -38,7 +38,7 @@ while read -r ip; do
 
     if [ "$geo" != "ERROR" ] && [ -n "$geo" ]; then
         # 检查 IP 的 443 端口是否开放
-        if nc -z -w2 "$ip" 443; then
+        if nc -z -w2 "$ip" 443 > /dev/null; then
             result="$ip"
             record="$ip:443#$country"
             # 写入对应国家和综合文件

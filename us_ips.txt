@@ -9,6 +9,7 @@
 129.159.84.71:443#United States
 129.213.136.180:443#United States
 129.213.202.222:443#United States
+129.80.16.180:443#United States
 132.226.31.178:443#United States
 141.148.170.160:443#United States
 141.148.187.195:443#United States

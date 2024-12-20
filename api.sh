@@ -57,7 +57,7 @@ while read -r ip; do
                     echo "❌ 失败添加 $geo.$DOMAIN_NAME -> $ip: $error_message" | tee -a cloudflare_log.txt
                 fi
           #  else
-                echo "✋ 只为 HK、JP、US 添加 DNS 记录，跳过 $geo.$DOMAIN_NAME"
+          #      echo "✋ 只为 HK、JP、US 添加 DNS 记录，跳过 $geo.$DOMAIN_NAME"
            # fi
         else
             echo "$ip:443 ❌ 端口关闭"

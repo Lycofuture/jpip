@@ -35,7 +35,6 @@ while :; do
 
   # 删除每条记录
   for record_id in $record_ids; do
-    echo "尝试删除记录 ID: $record_id"
     response=$(curl -s -X DELETE "https://api.cloudflare.com/client/v4/zones/$ZONE_ID/dns_records/$record_id" \
     -H "X-Auth-Email: $CLOUDFLARE_EMAIL" \
     -H "X-Auth-Key: $CLOUDFLARE_API_KEY" \

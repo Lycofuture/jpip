@@ -40,7 +40,7 @@ while read -r ip; do
             echo "$record" >> all_ips.txt
 
             # 添加 DNS 记录到 Cloudflare
-            if [[ "$geo" == "hk" || "$geo" == "jp" || "$geo" == "us" ]]; then
+            #if [[ "$geo" == "hk" || "$geo" == "jp" || "$geo" == "us" ]]; then
                 # 添加 DNS 记录到 Cloudflare
                 dns_response=$(curl -s -X POST "https://api.cloudflare.com/client/v4/zones/$ZONE_ID/dns_records" \
                     -H "X-Auth-Email: $CLOUDFLARE_EMAIL" \
@@ -56,9 +56,9 @@ while read -r ip; do
                     error_message=$(echo "$dns_response" | jq -r '.errors[0].message' 2>/dev/null || echo "Unknown error")
                     echo "❌ 失败添加 $geo.$DOMAIN_NAME -> $ip: $error_message" | tee -a cloudflare_log.txt
                 fi
-            else
+          #  else
                 echo "✋ 只为 HK、JP、US 添加 DNS 记录，跳过 $geo.$DOMAIN_NAME"
-            fi
+           # fi
         else
             echo "$ip:443 ❌ 端口关闭"
         fi

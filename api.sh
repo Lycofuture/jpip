@@ -51,7 +51,8 @@ while read -r ip; do
                 # 检查 API 响应
                 success=$(echo "$dns_response" | jq -r '.success' 2>/dev/null)
                 if [ "$success" == "true" ]; then
-                    echo "✅ 成功添加 $geo.$DOMAIN_NAME -> $ip" | tee -a cloudflare_log.txt
+                    echo "✅ 成功添加 $geo.$DOMAIN_NAME -> $ip" | tee -a cloudflare_ips.txt
+                    echo "$geo.$DOMAIN_NAME" >> added_ips.txt
                 else
                     error_message=$(echo "$dns_response" | jq -r '.errors[0].message' 2>/dev/null || echo "Unknown error")
                     echo "❌ 失败添加 $geo.$DOMAIN_NAME -> $ip: $error_message" | tee -a cloudflare_log.txt
@@ -69,5 +70,6 @@ while read -r ip; do
     # 限制请求频率，避免 API 被封
     sleep 1
 done < list.txt
-
-echo "脚本处理完成。结果已保存到 *_ips.txt、all_ips.txt 和 cloudflare_log.txt 文件中。"
+#去重
+sort -u added_ips.txt -o added_ips.txt
+echo "脚本处理完成。结果已保存到 *_ips.txt、all_ips.txt 和 cloudflare_ips.txt 文件中。"

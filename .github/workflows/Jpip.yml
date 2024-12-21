@@ -1,6 +1,8 @@
 name: jpip
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '0 03 * * *'
 permissions:
   contents: write
   discussions: write

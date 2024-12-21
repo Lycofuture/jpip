@@ -14,10 +14,9 @@ else
 fi
 
 # 删除所有 A 类型 DNS 记录
-page=1
 while :; do
-  echo "查询第 $page 页的 DNS 记录..."
-  dns_records=$(curl -s -X GET "https://api.cloudflare.com/client/v4/zones/$ZONE_ID/dns_records?page=$page&per_page=100" \
+  echo "查询第 DNS 记录..."
+  dns_records=$(curl -s -X GET "https://api.cloudflare.com/client/v4/zones/$ZONE_ID/dns_records?page=1&per_page=100" \
   -H "X-Auth-Email: $CLOUDFLARE_EMAIL" \
   -H "X-Auth-Key: $CLOUDFLARE_API_KEY" \
   -H "Content-Type: application/json")
@@ -27,7 +26,7 @@ while :; do
 
   # 如果没有更多 A 记录，则退出循环
   if [[ -z "$record_ids" ]]; then
-    echo "第 $page 页无 A 类型记录，清理完成。"
+    echo "无 A 类型记录，清理完成。"
     break
   fi
 
@@ -58,8 +57,6 @@ while :; do
       fi
     fi
   done <<< "$record_ids"
-
-  ((page++))
 done
 
 echo "A 类型 DNS 记录清理完成。"

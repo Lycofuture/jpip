@@ -1,4 +1,4 @@
-name: jppp
+name: 删除
 on:
   workflow_dispatch:
 permissions:

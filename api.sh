@@ -31,10 +31,10 @@ while read -r ip; do
     country=$(echo "$response" | jq -r '.country' 2>/dev/null || echo "Unknown")
 
     if [ "$geo" != "ERROR" ] && [ -n "$geo" ]; then
-        # 检查 IP 的 8443 端口是否开放
-        if nc -z -w2 "$ip" 8443; then
+        # 检查 IP 的 443 端口是否开放
+        if nc -z -w2 "$ip" 443; then
             result="$ip"
-            record="$ip:8443#$country"
+            record="$ip:443#$country"
             # 写入对应国家和综合文件
             echo "$record" >> "${geo}_ips.txt"
             echo "$record" >> all_ips.txt

@@ -13,50 +13,53 @@ else
   echo "成功获取 Zone ID: $ZONE_ID"
 fi
 
-# 删除所有 DNS 记录，直到清空
+# 删除所有 A 类型 DNS 记录
+page=1
 while :; do
-  echo "查询当前 DNS 记录..."
-  dns_records=$(curl -s -X GET "https://api.cloudflare.com/client/v4/zones/$ZONE_ID/dns_records?page=1&per_page=100" \
+  echo "查询第 $page 页的 DNS 记录..."
+  dns_records=$(curl -s -X GET "https://api.cloudflare.com/client/v4/zones/$ZONE_ID/dns_records?page=$page&per_page=100" \
   -H "X-Auth-Email: $CLOUDFLARE_EMAIL" \
   -H "X-Auth-Key: $CLOUDFLARE_API_KEY" \
   -H "Content-Type: application/json")
 
-  # 提取当前记录 ID 数量
-  record_ids=$(echo "$dns_records" | jq -r '.result[].id')
-  # 统计数量
-  record_count=$(echo "$record_ids" | grep -c '[^[:space:]]')
+  # 提取 A 类型记录的 ID 和名称
+  record_ids=$(echo "$dns_records" | jq -r '.result[] | select(.type == "A") | "\(.id) \(.name)"')
 
-  if [[ $record_count -eq 0 ]]; then
-    echo "所有 DNS 记录已清空。"
+  # 如果没有更多 A 记录，则退出循环
+  if [[ -z "$record_ids" ]]; then
+    echo "第 $page 页无 A 类型记录，清理完成。"
     break
   fi
 
-  echo "当前 DNS 记录数: $record_count"
+  echo "找到以下 A 类型记录："
+  echo "$record_ids" | awk '{print $2}'
 
-  # 删除每条记录
-  for record_id in $record_ids; do
+  # 删除每条 A 类型记录
+  while read -r record_id record_name; do
     response=$(curl -s -X DELETE "https://api.cloudflare.com/client/v4/zones/$ZONE_ID/dns_records/$record_id" \
     -H "X-Auth-Email: $CLOUDFLARE_EMAIL" \
     -H "X-Auth-Key: $CLOUDFLARE_API_KEY" \
     -H "Content-Type: application/json")
 
     if [[ $(echo "$response" | jq -r '.success') == "true" ]]; then
-      echo "成功删除记录 ID: $record_id"
+      echo "成功删除记录: $record_name (ID: $record_id)"
     else
-      echo "删除记录 ID: $record_id 失败 - $(echo "$response" | jq -r '.errors')"
-      echo "重试删除记录 ID: $record_id..."
+      echo "删除记录失败: $record_name (ID: $record_id) - $(echo "$response" | jq -r '.errors')"
+      echo "重试删除记录..."
       retry_response=$(curl -s -X DELETE "https://api.cloudflare.com/client/v4/zones/$ZONE_ID/dns_records/$record_id" \
       -H "X-Auth-Email: $CLOUDFLARE_EMAIL" \
       -H "X-Auth-Key: $CLOUDFLARE_API_KEY" \
       -H "Content-Type: application/json")
 
       if [[ $(echo "$retry_response" | jq -r '.success') == "true" ]]; then
-        echo "重试成功删除记录 ID: $record_id"
+        echo "重试成功删除记录: $record_name (ID: $record_id)"
       else
-        echo "重试仍然失败，稍后继续尝试。"
+        echo "重试仍然失败，跳过此记录。"
       fi
     fi
-  done
+  done <<< "$record_ids"
+
+  ((page++))
 done
 
-echo "DNS 记录清理完成。"
+echo "A 类型 DNS 记录清理完成。"

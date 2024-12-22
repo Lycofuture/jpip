@@ -5,6 +5,7 @@ ca.majutsu.top
 ch.majutsu.top
 cl.majutsu.top
 de.majutsu.top
+error.majutsu.top
 fr.majutsu.top
 gb.majutsu.top
 hk.majutsu.top

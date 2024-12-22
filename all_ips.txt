@@ -12,16 +12,9 @@
 129.151.204.91:443#Sweden
 129.151.225.228:443#France
 129.151.254.48:443#France
-129.153.162.212:443#United States
 129.153.203.62:443#United States
 129.153.223.37:443#United States
-129.153.233.121:443#United States
-129.154.196.81:443#South Korea
-129.154.197.153:443#South Korea
-129.154.202.72:443#South Korea
-129.154.206.175:443#South Korea
 129.154.207.203:443#South Korea
-129.154.208.202:443#South Korea
 129.154.213.144:443#South Korea
 129.154.223.161:443#South Korea
 129.154.46.115:443#India
@@ -29,187 +22,100 @@
 129.154.53.238:443#South Korea
 129.154.59.99:443#South Korea
 129.154.60.48:443#South Korea
-129.158.193.224:443#United States
 129.159.13.224:443#Germany
-129.159.194.58:443#Germany
 129.159.196.90:443#Germany
-129.159.207.241:443#Germany
 129.159.22.4:443#India
-129.159.220.113:443#Germany
-129.159.223.153:443#Germany
 129.159.223.183:443#Germany
 129.159.241.172:443#Germany
 129.159.243.71:443#Germany
-129.159.253.103:443#Germany
-129.159.255.132:443#Germany
 129.159.26.141:443#Germany
-129.159.27.244:443#Germany
 129.159.30.31:443#Germany
 129.159.31.192:443#Germany
 129.159.8.141:443#Germany
 129.159.84.71:443#United States
 129.213.136.180:443#United States
-129.213.187.69:443#United States
 129.213.202.222:443#United States
-129.80.10.149:443#United States
-129.80.211.79:443#United States
-129.80.224.180:443#United States
 130.162.128.80:443#South Korea
-130.162.129.50:443#South Korea
-130.162.131.110:443#South Korea
 130.162.133.176:443#South Korea
-130.162.138.123:443#South Korea
-130.162.143.5:443#South Korea
 130.162.144.191:443#South Korea
-130.162.145.100:443#South Korea
 130.162.149.21:443#South Korea
-130.162.150.9:443#South Korea
 130.162.151.16:443#South Korea
-130.162.158.96:443#South Korea
-130.162.162.53:443#United Kingdom
-130.162.163.44:443#United Kingdom
-130.162.166.194:443#United Kingdom
 130.162.169.44:443#United Kingdom
 130.162.171.126:443#United Kingdom
 130.162.171.185:443#United Kingdom
 130.162.174.138:443#United Kingdom
-130.162.176.178:443#United Kingdom
 130.162.177.71:443#United Kingdom
-130.162.181.138:443#United Kingdom
 130.162.181.165:443#United Kingdom
-130.162.182.210:443#United Kingdom
-130.162.182.43:443#United Kingdom
 130.162.183.129:443#United Kingdom
-130.162.183.166:443#United Kingdom
 130.162.184.169:443#United Kingdom
 130.162.184.5:443#United Kingdom
-130.162.185.24:443#United Kingdom
 130.162.186.92:443#United Kingdom
 130.162.187.3:443#United Kingdom
-130.162.190.200:443#United Kingdom
 130.162.208.10:443#Germany
-130.162.215.226:443#Germany
 130.162.217.141:443#Germany
-130.162.217.94:443#Germany
-130.162.218.117:443#Germany
-130.162.221.52:443#Germany
 130.162.228.246:443#Germany
 130.162.228.90:443#Germany
-130.162.229.16:443#Germany
-130.162.231.198:443#Germany
 130.162.237.131:443#Germany
-130.162.243.29:443#Germany
 130.162.253.40:443#Germany
 130.162.33.133:443#Germany
-130.162.37.49:443#Germany
-130.162.38.30:443#Germany
 130.162.47.176:443#Germany
-130.162.47.73:443#Germany
-130.162.54.27:443#Germany
-130.162.60.211:443#Germany
 130.162.61.18:443#Germany
+130.162.62.179:443#Germany
 130.162.63.9:443#Germany
-130.61.132.122:443#Germany
 130.61.195.171:443#Germany
-130.61.199.251:443#Germany
 130.61.23.77:443#Germany
 130.61.39.13:443#Germany
-131.186.17.109:443#South Korea
 131.186.17.132:443#South Korea
-131.186.19.112:443#South Korea
-131.186.21.235:443#South Korea
-131.186.24.38:443#South Korea
 131.186.27.112:443#South Korea
-131.186.27.49:443#South Korea
-131.186.29.164:443#South Korea
 131.186.30.44:443#South Korea
 131.186.33.175:443#Japan
-131.186.43.202:443#Japan
 131.186.45.192:443#Japan
 131.186.62.248:443#Japan
-132.145.116.216:443#Japan
-132.145.13.128:443#United Kingdom
 132.145.13.96:443#United Kingdom
 132.145.230.228:443#Germany
-132.145.243.143:443#Germany
-132.145.255.49:443#Germany
 132.145.54.84:443#United Kingdom
 132.145.64.57:443#United Kingdom
 132.145.81.117:443#South Korea
 132.145.94.80:443#South Korea
 132.226.114.74:443#United States
-132.226.129.204:443#United Kingdom
-132.226.132.178:443#United Kingdom
-132.226.134.139:443#United Kingdom
+132.226.134.139:443#Unknown
 132.226.134.4:443#United Kingdom
 132.226.154.3:443#United States
 132.226.163.224:443#Brazil
 132.226.173.239:443#South Korea
 132.226.175.157:443#South Korea
 132.226.19.106:443#South Korea
-132.226.192.229:443#Germany
-132.226.194.252:443#Germany
 132.226.198.25:443#Germany
-132.226.199.198:443#Germany
 132.226.200.66:443#Germany
 132.226.205.151:443#Germany
 132.226.206.188:443#Germany
-132.226.212.22:443#United Kingdom
-132.226.212.255:443#United Kingdom
-132.226.213.218:443#United Kingdom
-132.226.213.25:443#United Kingdom
 132.226.214.250:443#United Kingdom
-132.226.228.25:443#South Korea
 132.226.23.189:443#South Korea
-132.226.235.178:443#South Korea
 132.226.31.178:443#United States
 132.226.7.217:443#Japan
-138.2.10.41:443#Japan
-138.2.104.225:443#Singapore
-138.2.112.130:443#South Korea
 138.2.113.145:443#South Korea
-138.2.113.66:443#South Korea
-138.2.116.18:443#South Korea
-138.2.116.24:443#South Korea
-138.2.120.183:443#South Korea
 138.2.123.180:443#South Korea
-138.2.123.57:443#South Korea
 138.2.123.70:443#South Korea
-138.2.125.124:443#South Korea
-138.2.131.16:443#Germany
 138.2.131.211:443#Germany
 138.2.134.205:443#Germany
-138.2.134.70:443#Germany
-138.2.151.149:443#Germany
 138.2.151.252:443#Germany
 138.2.152.76:443#Germany
-138.2.157.68:443#Germany
-138.2.16.65:443#Japan
 138.2.163.214:443#Germany
 138.2.166.146:443#Germany
-138.2.171.208:443#Germany
 138.2.172.187:443#Germany
 138.2.172.66:443#Germany
 138.2.175.80:443#Germany
 138.2.179.201:443#Germany
-138.2.19.70:443#Japan
 138.2.191.8:443#Germany
-138.2.20.6:443#Japan
-138.2.3.177:443#Japan
-138.2.5.5:443#Japan
 138.2.56.246:443#Japan
 138.2.61.180:443#Japan
 138.2.66.92:443#Singapore
 138.2.75.91:443#Singapore
-138.2.79.112:443#Singapore
-138.3.208.9:443#Japan
 138.3.209.144:443#Japan
 138.3.210.24:443#Japan
 138.3.218.230:443#Japan
 138.3.221.115:443#Japan
 138.3.222.78:443#Japan
-138.3.243.167:443#Germany
-138.3.249.67:443#Germany
 138.3.250.40:443#Germany
 138.3.254.39:443#Germany
 139.185.34.131:443#United Arab Emirates
@@ -224,377 +130,182 @@
 140.238.60.225:443#Japan
 140.238.86.228:443#United Kingdom
 140.83.33.57:443#Japan
-140.83.33.80:443#Japan
 140.83.61.244:443#Japan
 140.84.179.114:443#Mexico
-141.144.192.112:443#The Netherlands
-141.144.193.211:443#The Netherlands
 141.144.195.102:443#The Netherlands
 141.144.195.252:443#The Netherlands
 141.144.197.106:443#The Netherlands
 141.144.197.111:443#The Netherlands
-141.144.198.10:443#The Netherlands
-141.144.198.66:443#The Netherlands
-141.144.199.20:443#The Netherlands
 141.144.203.107:443#The Netherlands
-141.144.203.165:443#The Netherlands
 141.144.204.188:443#The Netherlands
 141.144.204.45:443#The Netherlands
 141.144.205.179:443#The Netherlands
-141.144.205.24:443#The Netherlands
-141.144.205.93:443#The Netherlands
-141.144.206.0:443#The Netherlands
 141.144.206.35:443#The Netherlands
 141.144.207.206:443#The Netherlands
-141.144.224.1:443#Germany
-141.144.224.242:443#Germany
-141.144.227.219:443#Germany
 141.144.230.113:443#Germany
 141.144.231.71:443#Germany
-141.144.232.249:443#Germany
-141.144.242.74:443#Germany
-141.144.243.156:443#Germany
-141.144.244.184:443#Germany
-141.144.246.228:443#Germany
-141.144.249.217:443#Germany
 141.144.250.218:443#Germany
-141.144.251.143:443#Germany
 141.144.253.109:443#Germany
 141.144.253.95:443#Germany
 141.145.199.188:443#France
 141.145.205.115:443#France
 141.145.216.142:443#France
 141.145.217.226:443#France
-141.147.103.29:443#United Kingdom
 141.147.104.148:443#United Kingdom
-141.147.104.229:443#United Kingdom
-141.147.104.237:443#United Kingdom
-141.147.105.216:443#United Kingdom
-141.147.106.211:443#United Kingdom
 141.147.106.78:443#United Kingdom
 141.147.107.204:443#United Kingdom
 141.147.110.141:443#United Kingdom
 141.147.14.150:443#Germany
 141.147.147.180:443#Japan
 141.147.16.152:443#Germany
-141.147.162.151:443#Japan
 141.147.163.68:443#Japan
 141.147.164.200:443#Japan
-141.147.168.155:443#Japan
 141.147.173.36:443#Japan
-141.147.175.175:443#Japan
-141.147.18.186:443#Germany
 141.147.18.66:443#Germany
 141.147.182.75:443#Japan
 141.147.184.160:443#Japan
 141.147.187.233:443#Japan
-141.147.189.31:443#Japan
 141.147.21.236:443#Germany
-141.147.27.134:443#Germany
-141.147.3.220:443#Germany
-141.147.30.220:443#Germany
 141.147.30.253:443#Germany
-141.147.33.177:443#Germany
 141.147.37.106:443#Germany
 141.147.39.99:443#Germany
-141.147.4.122:443#Germany
 141.147.4.168:443#Germany
 141.147.40.199:443#Germany
-141.147.46.118:443#Germany
 141.147.5.134:443#Germany
-141.147.55.106:443#Germany
-141.147.67.12:443#United Kingdom
 141.147.7.145:443#Germany
-141.147.74.1:443#United Kingdom
 141.147.74.121:443#United Kingdom
-141.147.77.60:443#United Kingdom
 141.147.78.108:443#United Kingdom
-141.147.78.195:443#United Kingdom
 141.147.82.153:443#United Kingdom
 141.147.83.238:443#United Kingdom
 141.147.85.167:443#United Kingdom
 141.147.85.169:443#United Kingdom
-141.147.86.169:443#United Kingdom
-141.147.87.113:443#United Kingdom
-141.147.88.49:443#United Kingdom
 141.147.88.55:443#United Kingdom
 141.147.88.81:443#United Kingdom
-141.147.89.122:443#United Kingdom
-141.147.90.251:443#United Kingdom
-141.147.91.14:443#United Kingdom
-141.147.91.227:443#United Kingdom
-141.147.92.124:443#United Kingdom
 141.147.92.242:443#United Kingdom
-141.147.93.117:443#United Kingdom
-141.147.94.211:443#United Kingdom
-141.147.96.167:443#United Kingdom
 141.147.96.39:443#United Kingdom
-141.147.97.165:443#United Kingdom
 141.147.97.17:443#United Kingdom
 141.147.97.51:443#United Kingdom
-141.147.98.49:443#United Kingdom
 141.148.166.30:443#United States
 141.148.187.195:443#United States
 141.148.203.6:443#India
 141.148.220.141:443#India
-141.148.224.30:443#The Netherlands
-141.148.224.34:443#The Netherlands
 141.148.224.42:443#The Netherlands
 141.148.225.108:443#The Netherlands
-141.148.226.1:443#The Netherlands
-141.148.226.114:443#The Netherlands
-141.148.227.107:443#The Netherlands
 141.148.227.19:443#The Netherlands
-141.148.228.133:443#The Netherlands
-141.148.228.156:443#The Netherlands
 141.148.229.106:443#The Netherlands
-141.148.230.152:443#The Netherlands
-141.148.230.195:443#The Netherlands
 141.148.232.123:443#The Netherlands
 141.148.233.218:443#The Netherlands
-141.148.237.161:443#The Netherlands
-141.148.238.0:443#The Netherlands
 141.148.238.132:443#The Netherlands
-141.148.239.104:443#The Netherlands
-141.148.239.239:443#The Netherlands
-141.148.240.173:443#The Netherlands
-141.148.240.191:443#The Netherlands
 141.148.243.5:443#The Netherlands
 141.148.244.108:443#The Netherlands
 141.148.245.244:443#The Netherlands
-141.148.245.57:443#The Netherlands
-141.148.246.249:443#The Netherlands
 141.148.247.101:443#The Netherlands
-141.148.247.230:443#The Netherlands
-143.47.176.85:443#The Netherlands
-143.47.177.125:443#The Netherlands
 143.47.179.79:443#The Netherlands
-143.47.184.237:443#The Netherlands
-143.47.185.187:443#The Netherlands
-143.47.186.105:443#The Netherlands
 143.47.186.167:443#The Netherlands
 143.47.187.176:443#The Netherlands
 143.47.187.21:443#The Netherlands
-143.47.188.115:443#The Netherlands
-143.47.188.174:443#The Netherlands
 143.47.188.5:443#The Netherlands
-143.47.190.164:443#The Netherlands
 143.47.190.177:443#The Netherlands
 143.47.190.190:443#The Netherlands
 143.47.191.195:443#The Netherlands
 143.47.224.212:443#United Kingdom
 143.47.224.4:443#United Kingdom
-143.47.226.63:443#United Kingdom
-143.47.227.66:443#United Kingdom
-143.47.233.246:443#United Kingdom
-143.47.236.95:443#United Kingdom
-143.47.241.109:443#United Kingdom
 143.47.243.144:443#United Kingdom
-143.47.245.219:443#United Kingdom
-143.47.246.253:443#United Kingdom
-143.47.248.57:443#United Kingdom
-143.47.249.2:443#United Kingdom
 143.47.249.71:443#United Kingdom
-143.47.251.205:443#United Kingdom
-143.47.252.40:443#United Kingdom
 144.21.34.183:443#The Netherlands
 144.21.35.101:443#The Netherlands
 144.21.35.251:443#The Netherlands
-144.21.35.63:443#The Netherlands
-144.21.36.137:443#The Netherlands
-144.21.36.167:443#The Netherlands
 144.21.41.145:443#The Netherlands
-144.21.41.77:443#The Netherlands
-144.21.48.81:443#United Kingdom
 144.21.51.233:443#United Kingdom
 144.21.54.222:443#United Kingdom
-144.21.57.112:443#United Kingdom
 144.21.59.164:443#United Kingdom
-144.21.59.47:443#United Kingdom
-144.21.59.81:443#United Kingdom
 144.22.252.124:443#Brazil
-144.24.176.51:443#Germany
-144.24.186.163:443#Germany
-144.24.186.77:443#Germany
-144.24.188.3:443#Germany
 144.24.200.164:443#France
 144.24.243.207:443#Switzerland
-144.24.64.244:443#South Korea
-144.24.70.71:443#South Korea
-144.24.72.200:443#South Korea
 144.24.73.232:443#South Korea
-144.24.76.173:443#South Korea
 144.24.78.162:443#South Korea
-144.24.78.66:443#South Korea
-144.24.80.177:443#South Korea
-144.24.82.46:443#South Korea
-144.24.84.217:443#South Korea
-144.24.85.186:443#South Korea
-144.24.87.125:443#South Korea
 144.24.90.107:443#South Korea
-144.24.90.61:443#South Korea
 144.24.92.30:443#South Korea
 144.24.94.204:443#South Korea
-144.24.94.223:443#South Korea
 144.24.94.8:443#South Korea
 146.56.101.141:443#South Korea
-146.56.107.92:443#South Korea
-146.56.113.238:443#South Korea
-146.56.114.219:443#South Korea
-146.56.115.181:443#South Korea
-146.56.130.205:443#South Korea
-146.56.135.149:443#South Korea
-146.56.136.163:443#South Korea
-146.56.139.55:443#South Korea
 146.56.141.117:443#South Korea
-146.56.141.42:443#South Korea
-146.56.143.11:443#South Korea
-146.56.160.147:443#South Korea
 146.56.162.25:443#South Korea
-146.56.166.249:443#South Korea
 146.56.169.86:443#South Korea
-146.56.170.115:443#South Korea
-146.56.176.53:443#South Korea
 146.56.181.133:443#South Korea
-146.56.181.63:443#South Korea
-146.56.191.180:443#South Korea
 149.129.250.187:443#Indonesia
 149.129.8.215:443#South Korea
 150.136.219.185:443#United States
 150.136.87.192:443#United States
-150.230.105.243:443#Japan
-150.230.109.215:443#Japan
-150.230.112.169:443#United Kingdom
 150.230.114.179:443#United Kingdom
-150.230.117.161:443#United Kingdom
-150.230.118.24:443#United Kingdom
 150.230.123.91:443#United Kingdom
-150.230.125.122:443#United Kingdom
 150.230.126.162:443#United Kingdom
 150.230.145.227:443#Germany
-150.230.151.64:443#Germany
 150.230.156.243:443#Germany
 150.230.158.191:443#Germany
 150.230.196.248:443#Japan
 150.230.20.147:443#The Netherlands
 150.230.200.26:443#Japan
-150.230.201.82:443#Japan
 150.230.203.73:443#Japan
-150.230.203.82:443#Japan
 150.230.205.110:443#Japan
-150.230.209.200:443#Japan
 150.230.21.9:443#The Netherlands
 150.230.211.122:443#Japan
 150.230.220.23:443#Japan
 150.230.221.148:443#Japan
 150.230.23.249:443#The Netherlands
 150.230.249.48:443#South Korea
-150.230.252.48:443#South Korea
 152.67.112.71:443#Australia
 152.67.129.103:443#United Kingdom
 152.67.130.49:443#United Kingdom
-152.67.131.41:443#United Kingdom
-152.67.133.203:443#United Kingdom
-152.67.134.235:443#United Kingdom
 152.67.136.46:443#United Kingdom
 152.67.139.235:443#United Kingdom
-152.67.143.196:443#United Kingdom
-152.67.155.100:443#United Kingdom
 152.67.156.56:443#United Kingdom
 152.67.158.197:443#United Kingdom
 152.67.190.105:443#India
 152.67.203.34:443#South Korea
-152.67.203.99:443#South Korea
 152.67.216.249:443#South Korea
-152.67.219.214:443#South Korea
 152.67.222.250:443#South Korea
 152.67.231.219:443#United States
 152.67.249.123:443#United States
 152.69.210.245:443#Singapore
 152.69.219.32:443#Singapore
 152.69.224.13:443#South Korea
-152.69.232.95:443#South Korea
 152.69.234.44:443#South Korea
 152.70.101.240:443#Japan
 152.70.155.147:443#United States
 152.70.166.114:443#Germany
 152.70.170.51:443#Germany
-152.70.171.37:443#Germany
-152.70.176.109:443#Germany
-152.70.182.169:443#Germany
 152.70.182.200:443#Germany
 152.70.22.176:443#Germany
 152.70.246.1:443#South Korea
 152.70.248.96:443#South Korea
-152.70.250.13:443#South Korea
-152.70.28.11:443#Germany
 152.70.29.191:443#Germany
 152.70.48.159:443#The Netherlands
 152.70.48.60:443#The Netherlands
-152.70.48.65:443#The Netherlands
 152.70.48.98:443#The Netherlands
 152.70.49.115:443#The Netherlands
 152.70.52.120:443#The Netherlands
 152.70.52.215:443#The Netherlands
-152.70.53.15:443#The Netherlands
-152.70.53.221:443#The Netherlands
-152.70.56.237:443#The Netherlands
-152.70.56.8:443#The Netherlands
-152.70.57.111:443#The Netherlands
 152.70.57.182:443#The Netherlands
-152.70.57.239:443#The Netherlands
-152.70.57.73:443#The Netherlands
-152.70.59.242:443#The Netherlands
-152.70.60.135:443#The Netherlands
-152.70.60.166:443#The Netherlands
 152.70.60.189:443#The Netherlands
-152.70.60.250:443#The Netherlands
-152.70.61.98:443#The Netherlands
-152.70.63.41:443#The Netherlands
 152.70.90.168:443#South Korea
-152.70.99.209:443#Japan
-155.248.161.249:443#Japan
-155.248.167.221:443#Japan
-155.248.168.229:443#Japan
 155.248.169.243:443#Japan
-155.248.184.197:443#Japan
 155.248.187.211:443#Japan
 155.248.196.123:443#United States
 158.101.141.78:443#Japan
 158.101.142.100:443#Japan
 158.101.148.105:443#Japan
-158.101.180.74:443#Germany
-158.101.192.11:443#The Netherlands
-158.101.192.7:443#The Netherlands
-158.101.193.246:443#The Netherlands
-158.101.203.158:443#The Netherlands
 158.101.203.72:443#The Netherlands
-158.101.204.210:443#The Netherlands
-158.101.205.160:443#The Netherlands
 158.101.205.229:443#The Netherlands
-158.101.205.99:443#The Netherlands
-158.101.206.73:443#The Netherlands
-158.101.207.26:443#The Netherlands
 158.101.208.229:443#The Netherlands
 158.101.209.129:443#The Netherlands
 158.101.209.76:443#The Netherlands
 158.101.210.72:443#The Netherlands
-158.101.213.207:443#The Netherlands
-158.101.213.29:443#The Netherlands
-158.101.214.42:443#The Netherlands
-158.101.216.248:443#The Netherlands
-158.101.217.208:443#The Netherlands
-158.101.217.244:443#The Netherlands
-158.101.218.218:443#The Netherlands
 158.101.219.218:443#The Netherlands
-158.101.219.36:443#The Netherlands
 158.101.221.65:443#The Netherlands
-158.101.223.109:443#The Netherlands
-158.101.223.120:443#The Netherlands
 158.101.24.17:443#United States
 158.101.33.35:443#United States
 158.101.74.97:443#Japan
-158.101.76.78:443#Japan
 158.101.86.44:443#Japan
 158.101.90.48:443#Japan
 158.178.238.239:443#Singapore
@@ -603,30 +314,17 @@
 158.180.230.4:443#Italy
 158.180.231.216:443#Italy
 158.180.64.144:443#South Korea
-158.180.64.173:443#South Korea
-158.180.64.253:443#South Korea
 158.180.65.145:443#South Korea
-158.180.66.19:443#South Korea
-158.180.66.231:443#South Korea
-158.180.67.181:443#South Korea
-158.180.68.51:443#South Korea
-158.180.69.144:443#South Korea
-158.180.70.68:443#South Korea
-158.180.76.213:443#South Korea
-158.180.84.199:443#South Korea
 158.180.89.73:443#South Korea
 158.180.95.207:443#South Korea
-158.180.95.3:443#South Korea
 164.152.17.14:443#United States
 164.152.34.166:443#Brazil
 165.1.79.60:443#United States
 168.138.13.201:443#Australia
 168.138.141.235:443#Brazil
 168.138.165.174:443#Singapore
-168.138.167.200:443#Singapore
 168.138.177.109:443#Singapore
 168.138.197.97:443#Japan
-168.138.216.146:443#Japan
 168.138.46.67:443#Japan
 168.138.50.249:443#Japan
 192.18.148.248:443#Canada
@@ -637,48 +335,23 @@
 192.9.180.162:443#Australia
 192.9.250.241:443#United States
 193.122.101.195:443#South Korea
-193.122.105.107:443#South Korea
-193.122.111.179:443#South Korea
-193.122.116.209:443#South Korea
+193.122.107.147:443#South Korea
 193.122.117.159:443#South Korea
-193.122.118.196:443#South Korea
 193.122.125.223:443#South Korea
-193.122.125.89:443#South Korea
 193.122.48.227:443#Germany
-193.122.51.118:443#Germany
 193.122.51.78:443#Germany
 193.122.58.158:443#Germany
-193.122.6.115:443#Germany
 193.122.97.248:443#South Korea
-193.123.163.216:443#Japan
-193.123.164.80:443#Japan
-193.123.185.109:443#United Kingdom
-193.123.186.217:443#United Kingdom
-193.123.187.69:443#United Kingdom
-193.123.190.171:443#United Kingdom
-193.123.234.173:443#South Korea
-193.123.247.215:443#South Korea
 193.123.250.67:443#South Korea
-193.123.254.19:443#South Korea
 193.123.32.47:443#The Netherlands
 193.123.33.63:443#The Netherlands
-193.123.33.72:443#The Netherlands
-193.123.36.11:443#The Netherlands
-193.123.37.239:443#The Netherlands
-193.123.37.70:443#The Netherlands
 193.123.38.208:443#The Netherlands
 193.123.38.72:443#The Netherlands
-193.123.56.204:443#The Netherlands
-193.123.56.231:443#The Netherlands
 193.123.56.84:443#The Netherlands
 193.123.59.6:443#The Netherlands
-193.123.60.148:443#The Netherlands
 193.123.60.156:443#The Netherlands
-193.123.61.224:443#The Netherlands
-193.123.62.151:443#The Netherlands
 193.123.62.153:443#The Netherlands
 193.123.62.174:443#The Netherlands
-193.123.62.244:443#The Netherlands
 193.123.63.150:443#The Netherlands
 193.123.69.77:443#United Arab Emirates
 193.123.81.105:443#United Arab Emirates
@@ -687,24 +360,14 @@
 47.243.137.146:443#Hong Kong
 47.243.234.9:443#Hong Kong
 47.243.70.186:443#Hong Kong
-47.245.103.188:443#Singapore
-47.245.105.153:443#Singapore
 47.245.108.127:443#Singapore
-47.245.110.146:443#Singapore
 47.245.110.76:443#Singapore
-47.245.112.244:443#Singapore
-47.245.117.78:443#Singapore
-47.245.119.105:443#Singapore
+47.245.118.70:443#Singapore
 47.245.120.119:443#Singapore
 47.245.125.100:443#Singapore
-47.245.125.53:443#Singapore
 47.245.126.194:443#Singapore
-47.245.85.117:443#Singapore
 47.245.87.17:443#Singapore
 47.245.90.157:443#Singapore
-47.245.91.160:443#Singapore
-47.245.98.225:443#Singapore
-47.245.99.68:443#Singapore
 47.251.95.178:443#United States
 47.253.105.131:443#United States
 47.254.65.110:443#United States
@@ -718,14 +381,7 @@
 47.91.29.136:443#Japan
 64.110.101.125:443#Japan
 64.110.104.30:443#Japan
-64.110.66.221:443#South Korea
-64.110.67.230:443#South Korea
-64.110.68.163:443#South Korea
-64.110.68.216:443#South Korea
-64.110.70.109:443#South Korea
 64.110.75.145:443#South Korea
-64.110.75.34:443#South Korea
-64.110.87.224:443#South Korea
 68.233.127.163:443#Canada
 8.209.119.190:443#Germany
 8.209.217.106:443#Japan
@@ -737,124 +393,42 @@
 8.217.168.149:443#Hong Kong
 8.218.148.106:443#Hong Kong
 8.219.111.147:443#Singapore
-8.219.113.44:443#Singapore
-8.219.113.51:443#Singapore
-8.219.117.101:443#Singapore
-8.219.117.228:443#Singapore
-8.219.118.186:443#Singapore
-8.219.118.54:443#Singapore
-8.219.120.146:443#Singapore
 8.219.120.87:443#Singapore
-8.219.121.221:443#Singapore
-8.219.122.3:443#Singapore
-8.219.125.224:443#Singapore
 8.219.125.47:443#Singapore
-8.219.129.192:443#Singapore
 8.219.129.213:443#Singapore
-8.219.129.227:443#Singapore
-8.219.13.177:443#Singapore
-8.219.132.121:443#Singapore
 8.219.135.196:443#Singapore
 8.219.141.14:443#Singapore
-8.219.145.116:443#Singapore
-8.219.153.217:443#Singapore
 8.219.153.237:443#Singapore
-8.219.155.108:443#Singapore
-8.219.162.227:443#Singapore
 8.219.166.160:443#Singapore
-8.219.167.146:443#Singapore
-8.219.170.44:443#Singapore
 8.219.181.254:443#Singapore
-8.219.186.23:443#Singapore
-8.219.186.79:443#Singapore
-8.219.187.78:443#Singapore
 8.219.190.195:443#Singapore
-8.219.193.10:443#Singapore
-8.219.193.17:443#Singapore
-8.219.2.43:443#Singapore
-8.219.200.7:443#Singapore
 8.219.204.70:443#Singapore
 8.219.206.168:443#Singapore
-8.219.206.191:443#Singapore
 8.219.222.176:443#Singapore
-8.219.228.66:443#Singapore
 8.219.229.63:443#Singapore
 8.219.230.23:443#Singapore
-8.219.233.6:443#Singapore
-8.219.234.232:443#Singapore
-8.219.240.138:443#Singapore
-8.219.243.93:443#Singapore
-8.219.251.240:443#Singapore
 8.219.252.165:443#Singapore
-8.219.5.115:443#Singapore
 8.219.55.76:443#Singapore
 8.219.6.150:443#Singapore
-8.219.60.54:443#Singapore
-8.219.60.86:443#Singapore
 8.219.71.186:443#Singapore
-8.219.71.251:443#Singapore
-8.219.71.58:443#Singapore
-8.219.78.53:443#Singapore
 8.219.79.144:443#Singapore
-8.219.83.48:443#Singapore
-8.219.86.194:443#Singapore
-8.219.93.120:443#Singapore
-8.219.95.26:443#Singapore
-8.219.97.144:443#Singapore
-8.219.98.67:443#Singapore
-8.222.131.168:443#Singapore
 8.222.132.145:443#Singapore
 8.222.135.109:443#Singapore
 8.222.137.200:443#Singapore
 8.222.144.50:443#Singapore
 8.222.144.66:443#Singapore
-8.222.144.77:443#Singapore
-8.222.145.52:443#Singapore
 8.222.147.90:443#Singapore
-8.222.154.107:443#Singapore
-8.222.156.4:443#Singapore
 8.222.161.192:443#Singapore
-8.222.162.45:443#Singapore
-8.222.163.44:443#Singapore
 8.222.165.104:443#Singapore
-8.222.169.253:443#Singapore
-8.222.170.241:443#Singapore
-8.222.173.249:443#Singapore
-8.222.178.102:443#Singapore
-8.222.178.80:443#Singapore
 8.222.179.231:443#Singapore
-8.222.180.226:443#Singapore
 8.222.180.86:443#Singapore
-8.222.181.95:443#Singapore
 8.222.182.42:443#Singapore
-8.222.185.136:443#Singapore
-8.222.185.140:443#Singapore
-8.222.186.125:443#Singapore
-8.222.188.190:443#Singapore
-8.222.189.246:443#Singapore
-8.222.189.91:443#Singapore
 8.222.191.138:443#Singapore
 8.222.194.229:443#Singapore
 8.222.196.0:443#Singapore
-8.222.197.123:443#Singapore
-8.222.200.141:443#Singapore
-8.222.203.126:443#Singapore
-8.222.203.178:443#Singapore
-8.222.205.211:443#Singapore
-8.222.206.17:443#Singapore
-8.222.207.85:443#Singapore
-8.222.211.69:443#Singapore
-8.222.212.216:443#Singapore
-8.222.215.20:443#Singapore
-8.222.217.254:443#Singapore
-8.222.218.250:443#Singapore
 8.222.221.50:443#Singapore
 8.222.222.203:443#Singapore
-8.222.231.142:443#Singapore
-8.222.232.121:443#Singapore
 8.222.239.199:443#Singapore
-8.222.245.211:443#Singapore
 8.222.247.175:443#Singapore
 8.222.250.18:443#Singapore
 8.222.252.52:443#Singapore
-8.222.253.248:443#Singapore

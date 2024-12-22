@@ -53,6 +53,7 @@ while read -r ip; do
                 if [ "$success" == "true" ]; then
                     echo "✅ 成功添加 $geo.$DOMAIN_NAME -> $ip" | tee -a cloudflare_ips.txt
                     echo "$geo.$DOMAIN_NAME" >> added_ips.txt
+                    echo "$geo.$DOMAIN_NAME#$country" >> addnm_ips.txt
                 else
                     error_message=$(echo "$dns_response" | jq -r '.errors[0].message' 2>/dev/null || echo "Unknown error")
                     echo "❌ 失败添加 $geo.$DOMAIN_NAME -> $ip: $error_message" | tee -a cloudflare_log.txt

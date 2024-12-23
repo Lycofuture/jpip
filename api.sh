@@ -73,4 +73,5 @@ while read -r ip; do
 done < list.txt
 #去重
 sort -u added_ips.txt -o added_ips.txt
+sort -u addnm_ips.txt -o addnm_ips.txt
 echo "脚本处理完成。结果已保存到 *_ips.txt、all_ips.txt 和 cloudflare_ips.txt 文件中。"

@@ -8,7 +8,6 @@ de.majutsu.top#Germany
 fr.majutsu.top#France
 gb.majutsu.top#United Kingdom
 hk.majutsu.top#Hong Kong
-id.majutsu.top#Indonesia
 il.majutsu.top#Israel
 in.majutsu.top#India
 it.majutsu.top#Italy

@@ -8,7 +8,6 @@ de.majutsu.top
 fr.majutsu.top
 gb.majutsu.top
 hk.majutsu.top
-id.majutsu.top
 il.majutsu.top
 in.majutsu.top
 it.majutsu.top
